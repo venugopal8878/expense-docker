@@ -1,8 +1,8 @@
 FROM node:20
 EXPOSE 80:80
 ENV DB_HOST="mysql"
-RUN mkdir /app/server
-WORKDIR /app/server
+RUN mkdir /opt/server
+WORKDIR /opt/server
 COPY package.json .
 COPY *.js  .
 RUN npm install 
