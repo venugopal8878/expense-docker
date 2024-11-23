@@ -1,0 +1,23 @@
+version: "3"
+networks:
+  expense:
+volumes:
+  mysql:     #docker volume cretae expense
+services:
+  mysql:
+     image: venuexpense/mysql:v1
+     container_name: mysql # --name mysql
+     volumes:
+       - mysql:/var/lib/mysql #mysql storge path this is in cmd we give like -v mysql:/var/lib/mysql
+  backend:
+     image: venuexpense/backend:v1
+     container_name: backend
+     depends_on:
+     - mysql
+  frontend:
+    image: venuexpense/frontend:v1
+    container_name: frontend
+    ports:
+      - 80:80
+    depends_on:
+     - backend
