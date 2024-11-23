@@ -5,7 +5,7 @@ volumes:
   mysql:     #docker volume cretae expense
 services:
   mysql:
-     image: venuexpense/mysql:v1
+     image: venu9976/venuexpense:mysql
      container_name: mysql # --name mysql
      volumes:
        - mysql:/var/lib/mysql #mysql storge path this is in cmd we give like -v mysql:/var/lib/mysql
