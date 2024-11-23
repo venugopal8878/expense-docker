@@ -12,12 +12,12 @@ RUN rm -rf /etc/nginx/nginx.conf && \
     chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /etc/nginx/ && \
     chmod -R 755 /etc/nginx/ && \
-    chown -R nginx:nginx /var/log/nginx && \
-    touch /var/run/nginx.pid && \
+    chown -R nginx:nginx /var/log/nginx 
+RUN touch /var/run/nginx.pid && \
     chown -R nginx:nginx /var/run/nginx.pid /run/nginx.pid
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY code /usr/share/nginx/html
-USER nginx
+USER nginx  
 #COPY expense.conf /etc/nginx/conf.d/expense.conf
 
 # befor best practices we user below code
